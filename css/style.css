@@ -213,7 +213,7 @@ img, svg { display: block; max-width: 100%; }
 .home-popup {
   position: absolute;
   left: 50%;
-  top: 5%; /* 237 / 844 기준 */
+  top: 15%; /* 237 / 844 기준 */
   transform: translateX(-50%);
   width: 585px;
   max-width: 88%;
