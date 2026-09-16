@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>테네브라 아카이브 — 인물 멤버란</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand-name">테네브라 아카이브</span>
+  <button class="menu-btn" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <svg class="brand-emblem" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 3 L43 24 L24 45 L5 24 Z" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="24" cy="24" r="7.5" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M24 24 m0 -7.5 a7.5 7.5 0 0 1 0 15 a5.6 5.6 0 0 1 0 -15" fill="currentColor" opacity="0.55"/>
+      </svg>
+      <div>
+        <div class="brand-name">테네브라 아카이브</div>
+        <div class="brand-tagline">칼릭스 대륙 자캐 커뮤니티<br>기록보관소</div>
+      </div>
+    </div>
+
+    <ul class="nav-list">
+      <li><a href="index.html"><span class="no">01</span>메인 홈</a></li>
+      <li><a href="world.html"><span class="no">02</span>세계관 설정</a></li>
+      <li><a href="school.html"><span class="no">03</span>학교 설정</a></li>
+      <li><a href="members.html" class="active"><span class="no">04</span>인물 멤버란</a></li>
+      <li><a href="notices.html"><span class="no">05</span>공지사항</a></li>
+    </ul>
+
+    <div class="sidebar-foot">칼릭스 대륙의 기록은<br>이곳에 보관됩니다.</div>
+  </aside>
+
+  <main class="content">
+    <div class="page-wrap">
+
+      <p class="eyebrow">MEMBERS</p>
+      <h1 class="page-title">인물 멤버란</h1>
+      <p class="lede">
+        칼릭스 대륙과 녹턴 아카데미에서 활동 중인 캐릭터들입니다.
+        기숙사(계열)별로 필터링해서 볼 수 있습니다.
+      </p>
+
+      <section class="block" style="margin-top:48px; padding-top:0; border-top:none;">
+
+        <div class="filter-row">
+          <button class="filter-btn active" data-filter="all">전체</button>
+          <button class="filter-btn" data-filter="janwol">잔월관</button>
+          <button class="filter-btn" data-filter="gyeolwoo">결우관</button>
+          <button class="filter-btn" data-filter="cheongeum">청음관</button>
+          <button class="filter-btn" data-filter="hoerang">회랑관</button>
+        </div>
+
+        <div class="grid grid-3">
+
+          <div class="member-card" data-group="janwol">
+            <div class="member-portrait">예시 이미지</div>
+            <div class="member-body">
+              <p class="member-name">리셴</p>
+              <p class="member-role">잔월관 · 4학년 · 발현계</p>
+              <p class="member-desc">
+                승부욕이 강하고 직설적인 성격. 회랑 지대 실습에서 두각을
+                드러낸다.
+              </p>
+              <div class="member-tags"><span>발현계</span><span>4학년</span></div>
+            </div>
+          </div>
+
+          <div class="member-card" data-group="gyeolwoo">
+            <div class="member-portrait">예시 이미지</div>
+            <div class="member-body">
+              <p class="member-name">테오도르</p>
+              <p class="member-role">결우관 · 5학년 · 결속계</p>
+              <p class="member-desc">
+                조용하지만 손끝이 야무진 장인 기질. 오래된 유물 복원에
+                관심이 많다.
+              </p>
+              <div class="member-tags"><span>결속계</span><span>5학년</span></div>
+            </div>
+          </div>
+
+          <div class="member-card" data-group="cheongeum">
+            <div class="member-portrait">예시 이미지</div>
+            <div class="member-body">
+              <p class="member-name">이졸데</p>
+              <p class="member-role">청음관 · 3학년 · 감응계</p>
+              <p class="member-desc">
+                타인의 감정에 예민하지만 겉으로는 잘 드러내지 않는다.
+                관찰력이 뛰어나다.
+              </p>
+              <div class="member-tags"><span>감응계</span><span>3학년</span></div>
+            </div>
+          </div>
+
+          <div class="member-card" data-group="hoerang">
+            <div class="member-portrait">예시 이미지</div>
+            <div class="member-body">
+              <p class="member-name">카시안</p>
+              <p class="member-role">회랑관 · 6학년 · 계열 무관</p>
+              <p class="member-desc">
+                여러 계열을 동시에 다루는 특이 체질. 졸업 연구로 잔광의
+                기원을 조사하고 있다.
+              </p>
+              <div class="member-tags"><span>다계열</span><span>6학년</span></div>
+            </div>
+          </div>
+
+          <div class="member-card" data-group="janwol">
+            <div class="member-portrait">예시 이미지</div>
+            <div class="member-body">
+              <p class="member-name">유나</p>
+              <p class="member-role">잔월관 · 2학년 · 계열 미배정</p>
+              <p class="member-desc">
+                입학 성적 1위로 들어온 신입생. 계열 배정을 앞두고 고민이
+                많다.
+              </p>
+              <div class="member-tags"><span>기초반</span><span>2학년</span></div>
+            </div>
+          </div>
+
+          <div class="member-card" data-group="gyeolwoo">
+            <div class="member-portrait">예시 이미지</div>
+            <div class="member-body">
+              <p class="member-name">마르코</p>
+              <p class="member-role">결우관 · 4학년 · 결속계</p>
+              <p class="member-desc">
+                잔광 각인 도구를 직접 만드는 것을 좋아한다. 협의회
+                의뢰를 종종 받는다.
+              </p>
+              <div class="member-tags"><span>결속계</span><span>4학년</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="note-box">
+          위 카드는 예시입니다. 실제 캐릭터를 등록하실 때는 이 파일의
+          <strong>member-card</strong> 블록을 복사해 이름, 소속, 소개,
+          태그를 원하는 내용으로 바꿔 사용하시면 됩니다.
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

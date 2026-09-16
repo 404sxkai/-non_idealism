@@ -1,0 +1,38 @@
+// 모바일 메뉴 토글
+document.addEventListener('DOMContentLoaded', function () {
+  var menuBtn = document.querySelector('.menu-btn');
+  var sidebar = document.querySelector('.sidebar');
+
+  if (menuBtn && sidebar) {
+    menuBtn.addEventListener('click', function () {
+      sidebar.classList.toggle('open');
+    });
+
+    sidebar.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        sidebar.classList.remove('open');
+      });
+    });
+  }
+
+  // 인물 멤버란 필터
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var memberCards = document.querySelectorAll('.member-card');
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var group = btn.getAttribute('data-filter');
+
+      memberCards.forEach(function (card) {
+        if (group === 'all' || card.getAttribute('data-group') === group) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
