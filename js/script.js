@@ -2,11 +2,18 @@
 document.addEventListener('DOMContentLoaded', function () {
   var menuBtn = document.querySelector('.menu-btn');
   var sidebar = document.querySelector('.sidebar');
+  var closeBtn = document.querySelector('.sidebar-close');
 
   if (menuBtn && sidebar) {
     menuBtn.addEventListener('click', function () {
       sidebar.classList.toggle('open');
     });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        sidebar.classList.remove('open');
+      });
+    }
 
     sidebar.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {

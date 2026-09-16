@@ -8,42 +8,20 @@
 </head>
 <body>
 
-<div class="topbar">
-  <span class="brand-name">비이상주의보</span>
+<header class="site-header">
+  <div class="site-header-text">
+    <p class="site-title">비이상주의보</p>
+  </div>
   <button class="menu-btn" aria-label="메뉴 열기">
     <span></span><span></span><span></span>
   </button>
-</div>
+</header>
 
-<div class="layout">
+<main class="content">
+  <div class="page-wrap">
 
-  <aside class="sidebar">
-    <div class="brand">
-      <svg class="brand-emblem" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 3 L43 24 L24 45 L5 24 Z" stroke="currentColor" stroke-width="1.4"/>
-        <circle cx="24" cy="24" r="7.5" stroke="currentColor" stroke-width="1.4"/>
-        <path d="M24 24 m0 -7.5 a7.5 7.5 0 0 1 0 15 a5.6 5.6 0 0 1 0 -15" fill="currentColor" opacity="0.55"/>
-      </svg>
-      <div>
-        <div class="brand-name">비이상주의보</div>
-        <div class="brand-tagline">자캐 커뮤니티 아카이브</div>
-      </div>
-    </div>
-
-    <ul class="nav-list">
-      <li><a href="index.html"><span class="no">01</span>홈</a></li>
-      <li><a href="world.html" class="active"><span class="no">02</span>이상주의</a></li>
-      <li><a href="school.html"><span class="no">03</span>직성고등학교</a></li>
-      <li><a href="members.html"><span class="no">04</span>학생기록부</a></li>
-      <li><a href="notices.html"><span class="no">05</span>안내사항</a></li>
-    </ul>
-  </aside>
-
-  <main class="content">
-    <div class="page-wrap">
-
-      <section class="block" style="margin-top:0; padding-top:0; border-top:none;">
-        <h2 class="block-title">역사 — 세 개의 시대</h2>
+    <section class="block" style="margin-top:0; padding-top:0; border-top:none;">
+      <h2 class="block-title">역사 — 세 개의 시대</h2>
         <div class="card">
           <h3 class="sub-title">여명기 (첫빛의 시대)</h3>
           <p>
@@ -145,12 +123,21 @@
           세부적인 마력 규칙이나 제약은 커뮤니티 운영 방향에 맞게
           자유롭게 조정해 사용하시면 됩니다.
         </p>
-      </section>
+    </section>
 
-    </div>
-  </main>
+  </div>
+</main>
 
-</div>
+<aside class="sidebar">
+  <button class="sidebar-close" aria-label="메뉴 닫기">✕</button>
+  <ul class="nav-list">
+    <li><a href="index.html"><span class="no">01</span>홈</a></li>
+    <li><a href="world.html" class="active"><span class="no">02</span>이상주의</a></li>
+    <li><a href="school.html"><span class="no">03</span>직성고등학교</a></li>
+    <li><a href="members.html"><span class="no">04</span>학생기록부</a></li>
+    <li><a href="notices.html"><span class="no">05</span>안내사항</a></li>
+  </ul>
+</aside>
 
 <script src="js/script.js"></script>
 </body>

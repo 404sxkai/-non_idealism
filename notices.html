@@ -8,103 +8,90 @@
 </head>
 <body>
 
-<div class="topbar">
-  <span class="brand-name">비이상주의보</span>
+<header class="site-header">
+  <div class="site-header-text">
+    <p class="site-title">비이상주의보</p>
+  </div>
   <button class="menu-btn" aria-label="메뉴 열기">
     <span></span><span></span><span></span>
   </button>
-</div>
+</header>
 
-<div class="layout">
+<main class="content">
+  <div class="page-wrap">
 
-  <aside class="sidebar">
-    <div class="brand">
-      <svg class="brand-emblem" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 3 L43 24 L24 45 L5 24 Z" stroke="currentColor" stroke-width="1.4"/>
-        <circle cx="24" cy="24" r="7.5" stroke="currentColor" stroke-width="1.4"/>
-        <path d="M24 24 m0 -7.5 a7.5 7.5 0 0 1 0 15 a5.6 5.6 0 0 1 0 -15" fill="currentColor" opacity="0.55"/>
-      </svg>
-      <div>
-        <div class="brand-name">비이상주의보</div>
-        <div class="brand-tagline">자캐 커뮤니티 아카이브</div>
+    <section class="block" style="margin-top:0; padding-top:0; border-top:none;">
+
+      <div class="notice-item">
+        <div class="notice-num">01</div>
+        <div>
+          <span class="tag gold">안내</span>
+          <h3>신입생 등록 안내</h3>
+          <p>
+            신규 캐릭터를 등록하실 분은 학생기록부 양식에 맞춰
+            신청해 주세요.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <ul class="nav-list">
-      <li><a href="index.html"><span class="no">01</span>홈</a></li>
-      <li><a href="world.html"><span class="no">02</span>이상주의</a></li>
-      <li><a href="school.html"><span class="no">03</span>직성고등학교</a></li>
-      <li><a href="members.html"><span class="no">04</span>학생기록부</a></li>
-      <li><a href="notices.html" class="active"><span class="no">05</span>안내사항</a></li>
-    </ul>
-  </aside>
-
-  <main class="content">
-    <div class="page-wrap">
-
-      <section class="block" style="margin-top:0; padding-top:0; border-top:none;">
-
-        <div class="notice-item">
-          <div class="notice-num">01</div>
-          <div>
-            <span class="tag gold">안내</span>
-            <h3>신입생 등록 안내</h3>
-            <p>
-              신규 캐릭터를 등록하실 분은 학생기록부 양식에 맞춰
-              신청해 주세요.
-            </p>
-          </div>
+      <div class="notice-item">
+        <div class="notice-num">02</div>
+        <div>
+          <span class="tag">수정</span>
+          <h3>이상주의 페이지 일부 수정</h3>
+          <p>
+            문의가 많았던 부분을 조금 더 구체적으로 보완했습니다.
+            기존에 등록된 캐릭터 설정에는 영향이 없습니다.
+          </p>
         </div>
+      </div>
 
-        <div class="notice-item">
-          <div class="notice-num">02</div>
-          <div>
-            <span class="tag">수정</span>
-            <h3>이상주의 페이지 일부 수정</h3>
-            <p>
-              문의가 많았던 부분을 조금 더 구체적으로 보완했습니다.
-              기존에 등록된 캐릭터 설정에는 영향이 없습니다.
-            </p>
-          </div>
+      <div class="notice-item">
+        <div class="notice-num">03</div>
+        <div>
+          <span class="tag gold">안내</span>
+          <h3>커뮤니티 이용 규칙 안내</h3>
+          <p>
+            캐릭터 간 상호작용, 설정 변경 제안 등은 운영진과 사전에
+            논의해 주세요. 자세한 규칙은 추후 별도 문서로 안내드릴
+            예정입니다.
+          </p>
         </div>
+      </div>
 
-        <div class="notice-item">
-          <div class="notice-num">03</div>
-          <div>
-            <span class="tag gold">안내</span>
-            <h3>커뮤니티 이용 규칙 안내</h3>
-            <p>
-              캐릭터 간 상호작용, 설정 변경 제안 등은 운영진과 사전에
-              논의해 주세요. 자세한 규칙은 추후 별도 문서로 안내드릴
-              예정입니다.
-            </p>
-          </div>
+      <div class="notice-item">
+        <div class="notice-num">04</div>
+        <div>
+          <span class="tag">개설</span>
+          <h3>비이상주의보 개설</h3>
+          <p>
+            직성고등학교를 배경으로 한 자캐 커뮤니티, 비이상주의보를
+            개설했습니다. 많은 참여 바랍니다.
+          </p>
         </div>
+      </div>
 
-        <div class="notice-item">
-          <div class="notice-num">04</div>
-          <div>
-            <span class="tag">개설</span>
-            <h3>비이상주의보 개설</h3>
-            <p>
-              직성고등학교를 배경으로 한 자캐 커뮤니티, 비이상주의보를
-              개설했습니다. 많은 참여 바랍니다.
-            </p>
-          </div>
-        </div>
+      <div class="note-box">
+        이 페이지의 공지는 예시입니다. <strong>notice-item</strong>
+        블록을 복사해 순번, 태그, 제목, 내용을 바꿔가며 새 공지를
+        추가하시면 됩니다.
+      </div>
 
-        <div class="note-box">
-          이 페이지의 공지는 예시입니다. <strong>notice-item</strong>
-          블록을 복사해 순번, 태그, 제목, 내용을 바꿔가며 새 공지를
-          추가하시면 됩니다.
-        </div>
+    </section>
 
-      </section>
+  </div>
+</main>
 
-    </div>
-  </main>
-
-</div>
+<aside class="sidebar">
+  <button class="sidebar-close" aria-label="메뉴 닫기">✕</button>
+  <ul class="nav-list">
+    <li><a href="index.html"><span class="no">01</span>홈</a></li>
+    <li><a href="world.html"><span class="no">02</span>이상주의</a></li>
+    <li><a href="school.html"><span class="no">03</span>직성고등학교</a></li>
+    <li><a href="members.html"><span class="no">04</span>학생기록부</a></li>
+    <li><a href="notices.html" class="active"><span class="no">05</span>안내사항</a></li>
+  </ul>
+</aside>
 
 <script src="js/script.js"></script>
 </body>

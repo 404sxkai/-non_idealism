@@ -6,7 +6,7 @@
 
 :root {
   --bg: #121313;
-  --bg-panel: #000201;
+  --bg-panel: #121313;
   --surface: #012027;
   --surface-alt: #06313c;
   --border: #324e59;
@@ -69,13 +69,118 @@ body::before {
     radial-gradient(ellipse 50% 35% at 100% 100%, rgba(1, 32, 39, 0.4), transparent 60%);
 }
 
-/* ---------- 레이아웃 뼈대 ---------- */
-.layout {
+/* ---------- 공통 헤더 (모든 페이지, 가로형 + 햄버거) ---------- */
+.site-header {
   display: flex;
-  min-height: 100vh;
-  position: relative;
-  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 28px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 30;
 }
+
+.site-header-text { min-width: 0; }
+
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.site-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin: 8px 0 0;
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+.menu-btn {
+  flex-shrink: 0;
+  width: 34px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 4px 0;
+}
+.menu-btn span { display: block; height: 2px; background: var(--gold); }
+
+/* ---------- 내비게이션 오버레이 (햄버거로 열림/닫힘) ---------- */
+.sidebar {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--bg-panel);
+  padding: 90px 32px 40px;
+  overflow-y: auto;
+  z-index: 50;
+}
+.sidebar.open { display: flex; }
+
+.sidebar-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.sidebar-close:hover { color: var(--text); }
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 420px;
+}
+
+.nav-list a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 12px;
+  border-radius: 3px;
+  font-size: 1.02rem;
+  color: var(--text-dim);
+  border-left: 2px solid transparent;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-list .no {
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+}
+
+.nav-list a:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.nav-list a.active {
+  color: var(--gold-bright);
+  border-left-color: var(--gold);
+  background: var(--surface);
+}
+
+.nav-list a.active .no { color: var(--gold); }
 
 /* ---------- 01 홈 (커버 페이지) ---------- */
 .cover-page {
@@ -84,30 +189,6 @@ body::before {
   min-height: 100vh;
   position: relative;
   z-index: 1;
-}
-
-.cover-header {
-  flex-shrink: 0;
-  background: var(--bg-panel);
-  border-bottom: 1px solid var(--border);
-  padding: 22px 32px;
-}
-
-.cover-title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--text);
-  margin: 0;
-  letter-spacing: 0.01em;
-}
-
-.cover-subtitle {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  margin: 8px 0 0;
-  line-height: 1.6;
-  max-width: 620px;
 }
 
 .cover-bg {
@@ -144,118 +225,15 @@ body::before {
   .cover-bg-img { object-fit: contain; }
 }
 
-/* ---------- 사이드바 ---------- */
-.sidebar {
-  width: var(--sidebar-w);
-  flex-shrink: 0;
-  background: var(--bg-panel);
-  border-right: 1px solid var(--border);
-  padding: 40px 28px 32px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.brand {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 44px;
-}
-
-.brand-emblem { width: 46px; height: 46px; color: var(--gold); }
-
-.brand-name {
-  font-family: var(--font-display);
-  font-size: 1.28rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--text);
-}
-
-.brand-tagline {
-  font-size: 0.76rem;
-  color: var(--text-faint);
-  letter-spacing: 0.03em;
-  line-height: 1.6;
-}
-
-.nav-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.nav-list a {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  padding: 11px 10px;
-  border-radius: 3px;
-  font-size: 0.94rem;
-  color: var(--text-dim);
-  border-left: 2px solid transparent;
-  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-}
-
-.nav-list .no {
-  font-family: var(--font-display);
-  font-size: 0.72rem;
-  color: var(--text-faint);
-}
-
-.nav-list a:hover {
-  color: var(--text);
-  background: var(--surface);
-}
-
-.nav-list a.active {
-  color: var(--gold-bright);
-  border-left-color: var(--gold);
-  background: var(--surface);
-}
-
-.nav-list a.active .no { color: var(--gold); }
-
-/* ---------- 모바일 상단바 ---------- */
-.topbar {
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  background: var(--bg-panel);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 30;
-}
-
-.topbar .brand-name { font-size: 1.05rem; }
-
-.menu-btn {
-  width: 36px; height: 30px;
-  background: none; border: none; cursor: pointer;
-  display: flex; flex-direction: column; justify-content: space-between;
-  padding: 4px 0;
-}
-.menu-btn span { display: block; height: 2px; background: var(--gold); }
-
 /* ---------- 메인 콘텐츠 ---------- */
 .content {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
 }
 
 .page-wrap {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 88px 32px 120px;
+  padding: 64px 32px 120px;
 }
 
 .eyebrow {
@@ -498,18 +476,7 @@ strong { color: var(--text); font-weight: 500; }
 
 /* ---------- 반응형 ---------- */
 @media (max-width: 880px) {
-  .sidebar { display: none; }
-  .topbar { display: flex; }
-  .page-wrap { padding: 56px 22px 90px; }
-
-  .sidebar.open {
-    display: flex;
-    position: fixed;
-    inset: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 40;
-  }
+  .page-wrap { padding: 48px 22px 90px; }
 }
 
 hr.rule {
