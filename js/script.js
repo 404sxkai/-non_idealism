@@ -15,6 +15,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // 학교 설정 문서 목차 (스크롤 시 현재 위치 강조)
+  var tocLinks = document.querySelectorAll('.wiki-toc a');
+  var tocTargets = document.querySelectorAll('.wiki-article [id]');
+
+  if (tocLinks.length && tocTargets.length && 'IntersectionObserver' in window) {
+    var tocObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.getAttribute('id');
+        tocLinks.forEach(function (link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      });
+    }, { rootMargin: '-30% 0px -55% 0px' });
+
+    tocTargets.forEach(function (target) { tocObserver.observe(target); });
+  }
+
   // 인물 멤버란 필터
   var filterBtns = document.querySelectorAll('.filter-btn');
   var memberCards = document.querySelectorAll('.member-card');
