@@ -215,7 +215,7 @@ img, svg { display: block; max-width: 100%; }
   left: 50%;
   top: 5%; /* 237 / 844 기준 */
   transform: translateX(-50%);
-  width: 650px;
+  width: 585px;
   max-width: 88%;
   z-index: 5;
   display: block;
