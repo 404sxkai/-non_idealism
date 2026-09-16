@@ -455,3 +455,166 @@ hr.rule {
 .list-plain { margin: 0; padding-left: 20px; color: var(--text-dim); }
 .list-plain li { margin-bottom: 10px; }
 .list-plain li:last-child { margin-bottom: 0; }
+
+/* =========================================================
+   위키형 문서 페이지 (목차 + 인포박스)
+   ========================================================= */
+
+.wiki-titleband {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 26px 32px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.wiki-kr {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+.wiki-hanja {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  margin: 0 0 6px;
+  letter-spacing: 0.05em;
+}
+.wiki-en {
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin: 0;
+}
+
+.wiki-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.wiki-toc {
+  width: 190px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 40px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  padding: 18px 16px;
+}
+.wiki-toc-title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.wiki-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wiki-toc li { margin: 0; }
+.wiki-toc ol ol { margin: 2px 0 6px 4px; }
+
+.wiki-toc a {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  padding: 6px 8px;
+  border-left: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.wiki-toc ol ol a {
+  font-size: 0.8rem;
+  padding: 5px 8px 5px 16px;
+  color: var(--text-faint);
+}
+.wiki-toc a:hover { color: var(--text); background: var(--surface); }
+.wiki-toc a.active {
+  color: var(--gold-bright);
+  border-left-color: var(--gold);
+  background: var(--surface);
+}
+
+.wiki-article {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.infobox {
+  align-self: flex-end;
+  width: 280px;
+  margin: 0 0 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.infobox-head {
+  background: linear-gradient(160deg, var(--surface-alt), var(--bg-panel));
+  border-bottom: 1px solid var(--border);
+  padding: 20px 18px;
+  text-align: center;
+}
+.infobox-emblem { width: 44px; height: 44px; margin: 0 auto 10px; color: var(--gold); }
+.infobox-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--text); margin: 0 0 3px; }
+.infobox-hanja { font-size: 0.7rem; color: var(--text-faint); margin: 0 0 3px; }
+.infobox-en { font-size: 0.62rem; color: var(--gold); letter-spacing: 0.08em; margin: 0; }
+
+.infobox table { width: 100%; border-collapse: collapse; }
+.infobox td {
+  font-size: 0.8rem;
+  padding: 9px 12px;
+  border-top: 1px solid var(--border-soft);
+  vertical-align: top;
+}
+.infobox tr:first-child td { border-top: none; }
+.infobox td.ib-label {
+  width: 84px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+.infobox td.ib-value { color: var(--text-dim); }
+.infobox td.ib-value.empty { color: var(--text-faint); font-style: italic; }
+
+.wiki-section {
+  margin-top: 44px;
+  scroll-margin-top: 32px;
+}
+.wiki-article > .infobox + .wiki-section {
+  margin-top: 0;
+}
+
+.wiki-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.wiki-section h3 {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  margin: 26px 0 10px;
+  scroll-margin-top: 32px;
+}
+.wiki-section h3:first-of-type { margin-top: 22px; }
+
+.sec-no { color: var(--gold); margin-right: 6px; }
+
+.wiki-placeholder {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+@media (max-width: 860px) {
+  .wiki-body { flex-direction: column; gap: 20px; }
+  .wiki-toc { position: static; width: 100%; }
+  .infobox { align-self: stretch; width: 100%; margin: 0 0 32px; }
+}
