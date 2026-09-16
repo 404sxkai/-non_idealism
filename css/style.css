@@ -488,19 +488,23 @@ hr.rule {
 }
 
 .wiki-body {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-areas:
+    "toc infobox"
+    "toc content";
+  column-gap: 36px;
+  row-gap: 36px;
+  align-items: start;
 }
 
 .wiki-toc {
-  width: 190px;
-  flex-shrink: 0;
+  grid-area: toc;
   position: sticky;
   top: 40px;
   background: var(--bg-panel);
   border: 1px solid var(--border-soft);
-  padding: 18px 16px;
+  padding: 18px 14px;
 }
 .wiki-toc-title {
   font-family: var(--font-display);
@@ -520,15 +524,15 @@ hr.rule {
 
 .wiki-toc a {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--text-dim);
-  padding: 6px 8px;
+  padding: 6px 6px;
   border-left: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
 .wiki-toc ol ol a {
-  font-size: 0.8rem;
-  padding: 5px 8px 5px 16px;
+  font-size: 0.77rem;
+  padding: 5px 6px 5px 14px;
   color: var(--text-faint);
 }
 .wiki-toc a:hover { color: var(--text); background: var(--surface); }
@@ -538,17 +542,13 @@ hr.rule {
   background: var(--surface);
 }
 
-.wiki-article {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-}
+.wiki-article { grid-area: content; min-width: 0; }
 
 .infobox {
-  align-self: flex-end;
+  grid-area: infobox;
+  justify-self: end;
   width: 280px;
-  margin: 0 0 40px;
+  margin: 0;
   background: var(--surface);
   border: 1px solid var(--border);
 }
@@ -583,7 +583,7 @@ hr.rule {
   margin-top: 44px;
   scroll-margin-top: 32px;
 }
-.wiki-article > .infobox + .wiki-section {
+.wiki-article > .wiki-section:first-of-type {
   margin-top: 0;
 }
 
@@ -614,7 +614,14 @@ hr.rule {
 }
 
 @media (max-width: 860px) {
-  .wiki-body { flex-direction: column; gap: 20px; }
+  .wiki-body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "infobox"
+      "toc"
+      "content";
+    row-gap: 24px;
+  }
   .wiki-toc { position: static; width: 100%; }
-  .infobox { align-self: stretch; width: 100%; margin: 0 0 32px; }
+  .infobox { justify-self: stretch; width: 100%; margin: 0; }
 }
