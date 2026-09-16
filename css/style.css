@@ -57,18 +57,6 @@ img, svg { display: block; max-width: 100%; }
   * { animation: none !important; transition: none !important; }
 }
 
-/* ---------- 배경 텍스처 ---------- */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 60% 40% at 15% 0%, rgba(50, 78, 89, 0.18), transparent 60%),
-    radial-gradient(ellipse 50% 35% at 100% 100%, rgba(1, 32, 39, 0.4), transparent 60%);
-}
-
 /* ---------- 공통 헤더 (모든 페이지, 가로형 + 햄버거) ---------- */
 .site-header {
   display: flex;
@@ -223,6 +211,65 @@ body::before {
 
 @media (max-width: 860px) {
   .cover-bg-img { object-fit: contain; }
+}
+
+/* ---------- 홈 팝업 (긴급재난문자 스타일) ---------- */
+.home-popup {
+  position: absolute;
+  left: 50%;
+  top: 28.1%; /* 237 / 844 기준 */
+  transform: translateX(-50%);
+  width: 650px;
+  max-width: 88%;
+  z-index: 5;
+  display: block;
+  background: #e4e4e4;
+  border-radius: 16px;
+  padding: 18px 28px 22px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: home-popup-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+.home-popup:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.5);
+}
+
+.home-popup-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #333;
+  margin: 0 0 10px;
+}
+.home-popup-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+.home-popup-title {
+  font-weight: 800;
+  font-size: 1.28rem;
+  margin: 0 0 8px;
+  color: #101112;
+}
+
+.home-popup-body {
+  font-size: 1.02rem;
+  margin: 0;
+  color: #101112;
+  line-height: 1.55;
+}
+
+@keyframes home-popup-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(50px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .home-popup { padding: 16px 20px 18px; top: 24%; }
+  .home-popup-title { font-size: 1.1rem; }
+  .home-popup-body { font-size: 0.92rem; }
 }
 
 /* ---------- 메인 콘텐츠 ---------- */
