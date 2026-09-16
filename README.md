@@ -1,22 +1,22 @@
-# 테네브라 아카이브
+# 비이상주의보
 
-칼릭스 대륙 / 녹턴 아카데미를 배경으로 한 자캐 커뮤니티 사이트입니다.
+직성고등학교를 배경으로 한 자캐 커뮤니티 사이트입니다.
 
 ## 폴더 구조
 
 ```
-index.html      메인 홈
-world.html      세계관 설정
-school.html     학교 설정
-members.html    인물 멤버란
-notices.html    공지사항
+index.html      01 홈 (커버 페이지, 사이드바 없음)
+world.html      02 이상주의
+school.html     03 직성고등학교 (위키 형식)
+members.html    04 학생기록부
+notices.html    05 안내사항
 css/style.css   공용 스타일
-js/script.js    모바일 메뉴 & 멤버 필터 스크립트
+js/script.js    모바일 메뉴 & 목차 강조 & 학생기록부 필터 스크립트
 ```
 
 ## GitHub Pages로 배포하기
 
-1. GitHub에서 새 저장소를 만듭니다 (예: `tenebra-archive`).
+1. GitHub에서 새 저장소를 만듭니다.
 2. 이 폴더의 파일 전체를 저장소에 업로드(또는 `git push`)합니다.
 3. 저장소 **Settings → Pages**로 이동합니다.
 4. **Source**를 `Deploy from a branch`로 설정하고, 브랜치는 `main`,
@@ -26,12 +26,15 @@ js/script.js    모바일 메뉴 & 멤버 필터 스크립트
 
 ## 내용 수정하기
 
-- 모든 텍스트는 각 `.html` 파일을 열어 직접 수정하면 됩니다.
-- **인물 멤버란**: `members.html`의 `member-card` 블록 하나를
-  복사해서 이름·소속·소개·태그를 바꾸면 캐릭터가 추가됩니다.
-- **공지사항**: `notices.html`의 `notice-item` 블록을 복사해서
-  날짜·태그·제목·내용을 바꾸면 새 공지가 추가됩니다.
-- **색상/폰트**: `css/style.css` 맨 위 `:root` 안의 변수 값을 바꾸면
-  전체 사이트의 색과 글꼴이 함께 바뀝니다.
-- **세계관 이름(칼릭스 대륙, 녹턴 아카데미 등)**은 예시로 지어낸
-  이름이니 자유롭게 바꿔서 사용하세요.
+- **색상**: `css/style.css` 맨 위 `:root` 안의 변수 값을 바꾸면 전체
+  사이트의 색이 함께 바뀝니다.
+- **01 홈 배경 이미지**: `index.html`의 `.cover-bg-placeholder` div를
+  지우고, 주석 처리된 `<img src="assets/home-bg.jpg" ...>` 줄의 주석을
+  해제한 뒤 실제 이미지 경로로 바꿔주세요. 데스크탑에서는 화면을 꽉
+  채우고(`cover`), 모바일에서는 비율을 유지한 채 축소됩니다(`contain`).
+- **학생기록부(04)**: `members.html`에서 `member-card` 블록을 복사해
+  `member-photo-placeholder` div를 `<img src="..." alt="이름">`으로
+  바꾸고, 한글/한자 이름을 입력하면 캐릭터가 추가됩니다. NPC인지
+  2학년인지에 따라 알맞은 `member-group` 블록에 넣어주세요.
+- **안내사항(05)**: `notices.html`의 `notice-item` 블록을 복사해
+  순번, 태그, 제목, 내용을 바꾸면 새 공지가 추가됩니다.

@@ -1,23 +1,23 @@
 /* =========================================================
-   테네브라 아카이브 — 공용 스타일
+   비이상주의보 — 공용 스타일
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
 :root {
-  --bg: #0b0c11;
-  --bg-panel: #12141b;
-  --surface: #191c25;
-  --surface-alt: #1d212b;
-  --border: #322a24;
-  --border-soft: #23262f;
-  --gold: #b68d4c;
-  --gold-bright: #d9b877;
-  --crimson: #7a2a3d;
-  --crimson-bright: #9c3b52;
-  --text: #e6e1d6;
-  --text-dim: #9b968c;
-  --text-faint: #6b675f;
+  --bg: #121313;
+  --bg-panel: #000201;
+  --surface: #012027;
+  --surface-alt: #06313c;
+  --border: #324e59;
+  --border-soft: #1c2e35;
+  --gold: #80888e;
+  --gold-bright: #e2dbd2;
+  --crimson: #324e59;
+  --crimson-bright: #4d6d7b;
+  --text: #e2dbd2;
+  --text-dim: #80888e;
+  --text-faint: #55636a;
 
   --font-display: 'Nanum Myeongjo', serif;
   --font-body: 'Noto Sans KR', sans-serif;
@@ -46,7 +46,7 @@ a { color: inherit; text-decoration: none; }
 
 img, svg { display: block; max-width: 100%; }
 
-::selection { background: var(--gold); color: #0b0c11; }
+::selection { background: var(--gold); color: var(--bg); }
 
 :focus-visible {
   outline: 2px solid var(--gold-bright);
@@ -65,8 +65,8 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 60% 40% at 15% 0%, rgba(122, 42, 61, 0.10), transparent 60%),
-    radial-gradient(ellipse 50% 35% at 100% 100%, rgba(182, 141, 76, 0.06), transparent 60%);
+    radial-gradient(ellipse 60% 40% at 15% 0%, rgba(50, 78, 89, 0.18), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 100% 100%, rgba(1, 32, 39, 0.4), transparent 60%);
 }
 
 /* ---------- 레이아웃 뼈대 ---------- */
@@ -75,6 +75,73 @@ body::before {
   min-height: 100vh;
   position: relative;
   z-index: 1;
+}
+
+/* ---------- 01 홈 (커버 페이지) ---------- */
+.cover-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-header {
+  flex-shrink: 0;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 32px;
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.cover-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin: 8px 0 0;
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+.cover-bg {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.cover-bg-placeholder {
+  position: absolute;
+  inset: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed var(--border);
+  color: var(--text-faint);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  padding: 24px;
+}
+
+.cover-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .cover-bg-img { object-fit: contain; }
 }
 
 /* ---------- 사이드바 ---------- */
@@ -155,14 +222,6 @@ body::before {
 }
 
 .nav-list a.active .no { color: var(--gold); }
-
-.sidebar-foot {
-  margin-top: auto;
-  padding-top: 28px;
-  font-size: 0.72rem;
-  color: var(--text-faint);
-  border-top: 1px solid var(--border-soft);
-}
 
 /* ---------- 모바일 상단바 ---------- */
 .topbar {
@@ -284,7 +343,7 @@ strong { color: var(--text); font-weight: 500; }
   color: var(--gold-bright);
   transition: background 0.2s ease, color 0.2s ease;
 }
-.btn:hover { background: var(--gold); color: #0b0c11; }
+.btn:hover { background: var(--gold); color: var(--bg); }
 
 .btn.ghost {
   border-color: var(--border-soft);
@@ -292,40 +351,20 @@ strong { color: var(--text); font-weight: 500; }
 }
 .btn.ghost:hover { background: var(--surface-alt); color: var(--text); border-color: var(--text-faint); }
 
-/* ---------- 둘러보기 카드 (홈) ---------- */
-.explore-card {
-  background: var(--surface);
-  border: 1px solid var(--border-soft);
-  padding: 24px 24px 22px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-.explore-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-
-.explore-card .no {
-  font-family: var(--font-display);
-  color: var(--gold);
-  font-size: 0.85rem;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.explore-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
-.explore-card p { font-size: 0.9rem; margin: 0; }
-
 /* ---------- 공지 리스트 ---------- */
 .notice-item {
   display: grid;
-  grid-template-columns: 96px 1fr;
+  grid-template-columns: 56px 1fr;
   gap: 24px;
   padding: 26px 0;
   border-bottom: 1px solid var(--border-soft);
 }
 .notice-item:first-child { padding-top: 0; }
 
-.notice-date {
+.notice-num {
   font-family: var(--font-display);
   color: var(--text-faint);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   padding-top: 3px;
 }
 
@@ -347,25 +386,12 @@ strong { color: var(--text); font-weight: 500; }
   .notice-item { grid-template-columns: 1fr; gap: 8px; }
 }
 
-/* ---------- 최근 소식 (홈) ---------- */
-.mini-notice {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border-soft);
-  font-size: 0.92rem;
-}
-.mini-notice:last-child { border-bottom: none; }
-.mini-notice .mn-title { color: var(--text); }
-.mini-notice .mn-date { color: var(--text-faint); font-size: 0.82rem; white-space: nowrap; }
-
-/* ---------- 멤버 카드 ---------- */
+/* ---------- 멤버 카드 (3:4 이미지 + 한글/한문 이름) ---------- */
 .filter-row {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 .filter-btn {
   background: none;
@@ -379,46 +405,87 @@ strong { color: var(--text); font-weight: 500; }
   transition: all 0.2s ease;
 }
 .filter-btn:hover { border-color: var(--gold); color: var(--gold-bright); }
-.filter-btn.active { background: var(--gold); border-color: var(--gold); color: #0b0c11; }
+.filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+
+.member-group { margin-top: 48px; }
+.member-group:first-of-type { margin-top: 0; }
+
+.member-group-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
 
 .member-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border-soft);
-  padding: 0;
-  overflow: hidden;
   transition: border-color 0.2s ease;
 }
 .member-card:hover { border-color: var(--gold); }
 
-.member-portrait {
-  height: 150px;
-  background: linear-gradient(160deg, var(--surface-alt), var(--bg-panel));
+.member-photo-placeholder {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 16px;
+  font-size: 0.74rem;
+  line-height: 1.6;
   color: var(--text-faint);
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  border-bottom: 1px solid var(--border-soft);
+  border: 1px dashed var(--border);
+  margin: 8px;
 }
 
-.member-body { padding: 20px 22px 24px; }
-.member-name {
+.member-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 2, 1, 0.88), transparent);
+  padding: 26px 10px 12px;
+  text-align: center;
+}
+
+.member-kr {
   font-family: var(--font-display);
-  font-size: 1.08rem;
   font-weight: 700;
+  font-size: 0.96rem;
   color: var(--text);
   margin: 0 0 2px;
 }
-.member-role { font-size: 0.8rem; color: var(--gold-bright); margin: 0 0 14px; }
-.member-desc { font-size: 0.88rem; margin: 0 0 14px; }
-.member-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-.member-tags span {
+
+.member-hanja {
   font-size: 0.7rem;
-  padding: 2px 8px;
-  border: 1px solid var(--border-soft);
-  color: var(--text-faint);
-  border-radius: 2px;
+  color: var(--text-dim);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 720px) {
+  .member-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 }
 
 .note-box {
@@ -443,7 +510,6 @@ strong { color: var(--text); font-weight: 500; }
     width: 100%;
     z-index: 40;
   }
-  .sidebar.open .sidebar-foot { display: none; }
 }
 
 hr.rule {

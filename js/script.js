@@ -33,22 +33,22 @@ document.addEventListener('DOMContentLoaded', function () {
     tocTargets.forEach(function (target) { tocObserver.observe(target); });
   }
 
-  // 인물 멤버란 필터
+  // 학생기록부 필터 (NPC / 2학년 그룹 단위)
   var filterBtns = document.querySelectorAll('.filter-btn');
-  var memberCards = document.querySelectorAll('.member-card');
+  var memberGroups = document.querySelectorAll('.member-group');
 
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       filterBtns.forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
 
-      var group = btn.getAttribute('data-filter');
+      var target = btn.getAttribute('data-filter');
 
-      memberCards.forEach(function (card) {
-        if (group === 'all' || card.getAttribute('data-group') === group) {
-          card.style.display = '';
+      memberGroups.forEach(function (group) {
+        if (target === 'all' || group.getAttribute('data-group') === target) {
+          group.style.display = '';
         } else {
-          card.style.display = 'none';
+          group.style.display = 'none';
         }
       });
     });

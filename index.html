@@ -3,126 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>비이상주의보 — 메인 홈</title>
+<title>비이상주의보</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="topbar">
-  <span class="brand-name">비이상주의보</span>
-  <button class="menu-btn" aria-label="메뉴 열기">
-    <span></span><span></span><span></span>
-  </button>
-</div>
+<div class="cover-page">
 
-<div class="layout">
+  <header class="cover-header">
+    <p class="cover-title">비이상주의보</p>
+    <p class="cover-subtitle">바닥에 나부끼는 청춘은 더이상 푸르지 않고 잿빛으로 물든 이상이 경보를 울리고 있어</p>
+  </header>
 
-  <aside class="sidebar">
-    <div class="brand">
-      <svg class="brand-emblem" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 3 L43 24 L24 45 L5 24 Z" stroke="currentColor" stroke-width="1.4"/>
-        <circle cx="24" cy="24" r="7.5" stroke="currentColor" stroke-width="1.4"/>
-        <path d="M24 24 m0 -7.5 a7.5 7.5 0 0 1 0 15 a5.6 5.6 0 0 1 0 -15" fill="currentColor" opacity="0.55"/>
-      </svg>
-      <div>
-        <div class="brand-name">테네브라 아카이브</div>
-        <div class="brand-tagline">칼릭스 대륙 자캐 커뮤니티<br>기록보관소</div>
-      </div>
+  <div class="cover-bg">
+    <div class="cover-bg-placeholder">
+      여기에 배경 이미지를 넣으세요.<br>
+      (데스크탑: 화면 꽉 채움 / 모바일: 비율 유지, 남는 여백은 배경색으로 채움)
     </div>
-
-    <ul class="nav-list">
-      <li><a href="index.html" class="active"><span class="no">01</span>메인 홈</a></li>
-      <li><a href="world.html"><span class="no">02</span>세계관 설정</a></li>
-      <li><a href="school.html"><span class="no">03</span>학교 설정</a></li>
-      <li><a href="members.html"><span class="no">04</span>인물 멤버란</a></li>
-      <li><a href="notices.html"><span class="no">05</span>공지사항</a></li>
-    </ul>
-
-    <div class="sidebar-foot">칼릭스 대륙의 기록은<br>이곳에 보관됩니다.</div>
-  </aside>
-
-  <main class="content">
-    <div class="page-wrap">
-
-      <p class="eyebrow">TENEBRA ARCHIVE</p>
-      <h1 class="page-title">빛이 닿지 않는 곳에서도,<br>기록은 남는다.</h1>
-      <p class="lede">
-        테네브라 아카이브는 칼릭스 대륙과 녹턴 아카데미를 배경으로 한
-        자캐 커뮤니티입니다. 이곳에서 만들어진 인물들은 하나의 세계를
-        함께 살아갑니다.
-      </p>
-
-      <div class="btn-row">
-        <a href="world.html" class="btn">세계관 살펴보기</a>
-        <a href="members.html" class="btn ghost">멤버란 가기</a>
-      </div>
-
-      <section class="block">
-        <h2 class="block-title">이 아카이브에 대하여</h2>
-        <p>
-          칼릭스 대륙은 오래전 빛의 근원이 사라지며 밤이 짙어진 땅입니다.
-          그 어둠 속에서도 사람들은 도시를 세우고, 학문을 잇고, 저마다의
-          이야기를 써 내려가고 있습니다. 테네브라 아카이브는 이 세계에
-          속한 캐릭터를 만들고, 서로의 이야기를 엮어가는 참여자들의
-          공간입니다.
-        </p>
-        <p>
-          누구나 이 세계의 규칙 안에서 자신만의 인물을 만들고, 그 인물이
-          녹턴 아카데미 혹은 대륙 어딘가에서 살아가는 모습을 함께
-          그려나갈 수 있습니다.
-        </p>
-      </section>
-
-      <section class="block">
-        <h2 class="block-title">둘러보기</h2>
-        <div class="grid grid-2">
-          <a href="world.html" class="explore-card">
-            <span class="no">02</span>
-            <h3>세계관 설정</h3>
-            <p>칼릭스 대륙의 지리, 역사, 세력과 마법 체계를 확인하세요.</p>
-          </a>
-          <a href="school.html" class="explore-card">
-            <span class="no">03</span>
-            <h3>학교 설정</h3>
-            <p>녹턴 아카데미의 기숙사, 학년 체계와 교칙을 안내합니다.</p>
-          </a>
-          <a href="members.html" class="explore-card">
-            <span class="no">04</span>
-            <h3>인물 멤버란</h3>
-            <p>이 세계에서 활동 중인 캐릭터들을 만나보세요.</p>
-          </a>
-          <a href="notices.html" class="explore-card">
-            <span class="no">05</span>
-            <h3>공지사항</h3>
-            <p>커뮤니티 운영 소식과 안내를 확인하세요.</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="block">
-        <h2 class="block-title">최근 소식</h2>
-        <div class="mini-notice">
-          <span class="mn-title">녹턴 아카데미 신입생 등록 안내</span>
-          <span class="mn-date">2026.09.10</span>
-        </div>
-        <div class="mini-notice">
-          <span class="mn-title">세계관 설정 일부 수정 — 마력 체계 보완</span>
-          <span class="mn-date">2026.09.03</span>
-        </div>
-        <div class="mini-notice">
-          <span class="mn-title">커뮤니티 이용 규칙 안내</span>
-          <span class="mn-date">2026.08.22</span>
-        </div>
-        <div class="btn-row">
-          <a href="notices.html" class="btn ghost">공지사항 전체 보기</a>
-        </div>
-      </section>
-
-    </div>
-  </main>
+    <!-- 이미지를 넣을 때는 아래 주석을 해제하고 위 placeholder div는 지워주세요.
+    <img src="assets/home-bg.jpg" alt="" class="cover-bg-img">
+    -->
+  </div>
 
 </div>
 
-<script src="js/script.js"></script>
 </body>
 </html>
