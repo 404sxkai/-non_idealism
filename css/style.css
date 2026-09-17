@@ -358,6 +358,16 @@ strong { color: var(--text); font-weight: 500; }
 .btn.ghost:hover { background: var(--surface-alt); color: var(--text); border-color: var(--text-faint); }
 
 /* ---------- 공지 리스트 ---------- */
+.notice-pinned {
+  background: var(--surface);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px;
+  margin-bottom: 36px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
 .notice-item {
   display: grid;
   grid-template-columns: 56px 1fr;
