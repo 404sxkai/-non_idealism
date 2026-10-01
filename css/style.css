@@ -752,7 +752,7 @@ hr.rule {
   margin: 0;
   color: #0e0e0e;
   font-size: 0.92rem;
-  line-height: 1.85;
+  line-height: 1.6;
 }
 .quote-source {
   display: flex;
@@ -850,7 +850,7 @@ hr.rule {
 }
 .history-year {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 700;
   font-size: 1rem;
   color: var(--text);
   flex-shrink: 0;
