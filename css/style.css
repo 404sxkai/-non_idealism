@@ -361,9 +361,12 @@ strong { color: var(--text); font-weight: 500; }
 .notice-pinned {
   background: var(--surface);
   border: 1px solid var(--gold);
+  border-right: 6px solid #012027;
   padding: 22px 26px;
   margin-bottom: 56px;
-  color: var(--text-dim);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 0.95rem;
   line-height: 1.75;
 }
@@ -378,13 +381,14 @@ strong { color: var(--text); font-weight: 500; }
 .notice-item:first-child { padding-top: 0; }
 
 .notice-num {
-  font-family: var(--font-display);
-  color: var(--text-faint);
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--text);
   font-size: 0.95rem;
   padding-top: 3px;
 }
 
-.notice-item h3 { margin: 0 0 8px; font-size: 1.05rem; font-family: var(--font-display); }
+.notice-item h3 { margin: 0 0 8px; font-size: 1.05rem; font-family: var(--font-body); }
 
 @media (max-width: 560px) {
   .notice-item { grid-template-columns: 1fr; gap: 8px; }
