@@ -211,14 +211,14 @@ img, svg { display: block; max-width: 100%; }
 }
 
 @media (max-width: 860px) {
+  .cover-bg { background: #0e0e0e; }
   .cover-media {
     inset: auto;
-    top: 50%;
+    top: 0;
     left: 0;
     right: 0;
     width: 100%;
     aspect-ratio: 2200 / 1237; /* 배경 이미지 실제 비율 */
-    transform: translateY(-50%);
   }
   .cover-bg-img { object-fit: contain; }
 }
