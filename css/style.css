@@ -807,6 +807,54 @@ hr.rule {
   color: var(--text);
 }
 
+/* ---------- 학교 연혁 타임라인 ---------- */
+.history-timeline {
+  position: relative;
+  margin: 20px 0 0;
+  padding-left: 4px;
+}
+.history-item {
+  position: relative;
+  padding: 0 0 26px 32px;
+  border-left: 1px dashed var(--border-soft);
+}
+.history-item:last-child {
+  border-left: 1px dashed transparent;
+  padding-bottom: 0;
+}
+.history-dot {
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid #012027;
+}
+.history-item.is-minor .history-dot {
+  border-color: var(--border);
+}
+.history-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.history-year {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  flex-shrink: 0;
+}
+.history-title {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.98rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
 @media (max-width: 860px) {
   .wiki-body {
     grid-template-columns: 1fr;
