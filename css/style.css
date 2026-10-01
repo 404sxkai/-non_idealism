@@ -660,6 +660,7 @@ hr.rule {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #f6f6f6;
   border-bottom: 1px solid var(--border);
 }
 .infobox-emblem { width: 80%; height: 80%; object-fit: contain; }
