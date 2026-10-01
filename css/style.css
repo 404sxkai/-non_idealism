@@ -689,8 +689,6 @@ hr.rule {
 .feature-card {
   width: 64%;
   margin: 16px auto 0;
-  border: 1px solid var(--border-soft);
-  overflow: hidden;
 }
 @media (max-width: 720px) {
   .feature-card { width: 100%; }
@@ -700,6 +698,8 @@ hr.rule {
   width: 100%;
   overflow: hidden;
   background: var(--surface);
+  border: 1px solid var(--border-soft);
+  margin-bottom: 2px;
 }
 .feature-card-img-wrap img {
   width: 100%;
@@ -724,7 +724,8 @@ hr.rule {
   background: #012027;
   color: #f6f6f6;
   text-align: center;
-  padding: 8px 12px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-soft);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.95rem;
