@@ -579,7 +579,7 @@ hr.rule {
   grid-template-columns: 160px 1fr;
   grid-template-areas:
     "toc infobox"
-    "toc content";
+    "content content";
   column-gap: 36px;
   row-gap: 36px;
   align-items: start;
@@ -587,8 +587,7 @@ hr.rule {
 
 .wiki-toc {
   grid-area: toc;
-  position: sticky;
-  top: 40px;
+  position: static;
   background: var(--bg-panel);
   border: 1px solid var(--border-soft);
   padding: 18px 14px;
