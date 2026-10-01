@@ -684,7 +684,6 @@ hr.rule {
   border-right: 1px solid var(--border);
 }
 .infobox td.ib-value { background: var(--bg); color: var(--text); }
-.infobox td.ib-value.empty { color: var(--text-faint); font-style: italic; }
 
 /* ---------- 이미지 카드 (3:2 고정) + 인용문 블록 ---------- */
 .feature-card {
@@ -751,7 +750,7 @@ hr.rule {
 }
 .quote-text {
   margin: 0;
-  color: var(--text-dim);
+  color: #0e0e0e;
   font-size: 0.92rem;
   line-height: 1.85;
 }
@@ -805,8 +804,7 @@ hr.rule {
 .sec-no { color: var(--gold); margin-right: 6px; }
 
 .wiki-placeholder {
-  color: var(--text-faint);
-  font-style: italic;
+  color: var(--text);
 }
 
 @media (max-width: 860px) {
