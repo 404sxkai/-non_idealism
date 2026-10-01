@@ -639,7 +639,7 @@ hr.rule {
 .infobox {
   grid-area: infobox;
   justify-self: end;
-  width: 280px;
+  width: 400px;
   margin: 0;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -655,7 +655,7 @@ hr.rule {
 .infobox-en { font-family: var(--font-body); font-weight: 700; font-size: 0.62rem; color: #f6f6f6; letter-spacing: 0.08em; line-height: 1.2; margin: 0; }
 
 .infobox-logo {
-  aspect-ratio: 1 / 1;
+  height: 280px;
   width: 100%;
   padding: 20px;
   display: flex;
@@ -683,7 +683,7 @@ hr.rule {
   border-top-color: rgba(246, 246, 246, 0.18);
   border-right: 1px solid var(--border);
 }
-.infobox td.ib-value { background: var(--bg); color: var(--text); }
+.infobox td.ib-value { background: var(--bg); color: var(--text); text-align: center; }
 
 /* ---------- 이미지 카드 (3:2 고정) + 인용문 블록 ---------- */
 .feature-card {
