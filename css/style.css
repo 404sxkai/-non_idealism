@@ -655,14 +655,15 @@ hr.rule {
 .infobox-en { font-family: var(--font-body); font-weight: 700; font-size: 0.62rem; color: #f6f6f6; letter-spacing: 0.08em; line-height: 1.2; margin: 0; }
 
 .infobox-logo {
-  padding: 16px 18px;
-  min-height: 64px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--border);
 }
-.infobox-emblem { width: 44px; height: 44px; color: var(--gold); }
+.infobox-emblem { width: 80%; height: 80%; object-fit: contain; }
 
 .infobox table { width: 100%; border-collapse: collapse; }
 .infobox td {
@@ -698,14 +699,17 @@ hr.rule {
   width: 100%;
   overflow: hidden;
   background: var(--surface);
-  border: 1px solid var(--border-soft);
-  margin-bottom: 2px;
+  border: 1px solid #f6f6f6;
 }
 .feature-card-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.feature-card-img-wrap.logo-fit img {
+  object-fit: contain;
+  padding: 36px;
 }
 .feature-card-img-placeholder {
   width: 100%;
@@ -725,7 +729,7 @@ hr.rule {
   color: #f6f6f6;
   text-align: center;
   padding: 6px 12px;
-  border: 1px solid var(--border-soft);
+  border: 1px solid #f6f6f6;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.95rem;
@@ -737,9 +741,7 @@ hr.rule {
   border-left: 8px solid #012027;
 }
 .quote-text {
-  margin: 0 0 14px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--text-dim);
+  margin: 0;
   color: var(--text-dim);
   font-size: 0.92rem;
   line-height: 1.85;
