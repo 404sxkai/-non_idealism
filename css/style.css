@@ -707,9 +707,17 @@ hr.rule {
   object-fit: cover;
   display: block;
 }
+.feature-card-img-wrap.logo-fit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .feature-card-img-wrap.logo-fit img {
+  width: auto;
+  height: auto;
+  max-width: 65%;
+  max-height: 65%;
   object-fit: contain;
-  padding: 36px;
 }
 .feature-card-img-placeholder {
   width: 100%;
